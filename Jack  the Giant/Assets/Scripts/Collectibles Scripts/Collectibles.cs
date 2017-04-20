@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class Collectibles : MonoBehaviour {
 
-    void OnEnable()
+	void OnTriggerEnter2D(Collider2D collision)
     {
-        Invoke("DestroyCollectible", 10f);
-    }
-
-    void DestroyCollectible()
-    {
-        gameObject.SetActive(false);
+		if (collision.name == "Cloud Collector") {
+			gameObject.SetActive (false);
+		}
     }
 }
